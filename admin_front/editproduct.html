@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Edit Product</title>
+    <style>
+      * {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 300;
+        font-style: normal;
+      }
+      body {
+        background-color: #faf7f5;
+        color: #333;
+      }
+      .container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        text-align: center;
+        color: #d4af37;
+      }
+      label {
+        font-weight: bold;
+        margin-top: 10px;
+      }
+      input[type="text"],
+      input[type="number"],
+      input[type="url"] {
+        width: 90%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      button {
+        width: 80%;
+        padding: 10px;
+        border: solid 0.1px;
+        color: black;
+        background-color: white;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      button:hover {
+        opacity: 0.7;
+        background-color: #d4af37;
+        color: white;
+      }
+      a {
+        color: #d4af37;
+        text-decoration: none;
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Edit Product</h2>
+      <form id="editProductForm">
+        <label for="id">Product ID:</label><br />
+        <input
+          type="number"
+          id="id"
+          name="id"
+          placeholder="Product ID"
+          readonly
+          required
+        />
+
+        <label for="name">Product Name:</label><br />
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter Product Name"
+          required
+        />
+
+        <label for="price_cost">Price Cost:</label><br />
+        <input
+          type="number"
+          id="price_cost"
+          name="price_cost"
+          placeholder="Enter Cost Price"
+          step="0.01"
+          required
+        />
+
+        <label for="price_with_Revenue">Price with Revenue:</label><br />
+        <input
+          type="number"
+          id="price_with_Revenue"
+          name="price_with_Revenue"
+          placeholder="Enter Price with Revenue"
+          step="0.01"
+          required
+        />
+
+        <label for="quantity">Quantity:</label><br />
+        <input
+          type="number"
+          id="quantity"
+          name="quantity"
+          placeholder="Enter Quantity"
+          required
+        />
+
+        <label for="image">Image URL:</label><br />
+        <input
+          type="url"
+          id="image"
+          name="image"
+          placeholder="Enter Image URL"
+          required
+        />
+
+        <label for="category_id">Category ID:</label><br />
+        <input
+          type="number"
+          id="category_id"
+          name="category_id"
+          placeholder="Enter Category ID"
+          required
+        />
+
+        <div style="text-align: center">
+          <button type="submit">Update Product</button>
+        </div>
+      </form>
+
+      <a href="Productstable.html">Cancel</a>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
