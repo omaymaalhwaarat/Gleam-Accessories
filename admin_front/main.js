@@ -19,6 +19,7 @@ function apiRequest(endpoint, method = "GET", data = null, callback) {
 
   xhr.send(data ? JSON.stringify(data) : null);
 }
+/* USERS Admin */
 
 // Fetch all users
 function fetchUsers() {
@@ -287,8 +288,7 @@ window.addEventListener("DOMContentLoaded", () => {
 async function fetchCategoryById(id) {
   try {
     const response = await fetch(
-      `http://localhost/fullproject/admin/categories.php/get/?id=` +
-        id
+      `http://localhost/fullproject/admin/categories.php/get/?id=` + id
     );
     if (!response.ok) {
       console.error("Failed to fetch product:", response.status);
@@ -301,6 +301,7 @@ async function fetchCategoryById(id) {
   }
 }
 
+//display on view card
 async function displayCategory() {
   const urlParams = new URLSearchParams(window.location.search);
   const categorytId = urlParams.get("id");
@@ -490,8 +491,7 @@ function deleteOrder(id) {
 async function fetchCategoryById(id) {
   try {
     const response = await fetch(
-      `http://localhost/fullproject/admin/categories.php/get/?id=` +
-        id
+      `http://localhost/fullproject/admin/categories.php/get/?id=` + id
     );
     if (!response.ok) {
       console.error("Failed to fetch product:", response.status);
@@ -593,8 +593,7 @@ window.addEventListener("DOMContentLoaded", () => {
 async function fetchProductById(id) {
   try {
     const response = await fetch(
-      `http://localhost/fullproject/admin/products.php/get/?id=` +
-        id
+      `http://localhost/fullproject/admin/products.php/get/?id=` + id
     );
     if (!response.ok) {
       console.error("Failed to fetch product:", response.status);
@@ -700,6 +699,7 @@ async function fillProductForm() {
   // Fill form fields with product data
   document.getElementById("id").value = product.id;
   document.getElementById("name").value = product.name;
+  document.getElementById("description").value = product.description;
   document.getElementById("price_cost").value = product.price_cost;
   document.getElementById("price_with_Revenue").value =
     product.price_with_Revenue;
@@ -721,6 +721,7 @@ let ss = document
     const productData = {
       id: formData.get("id"),
       name: formData.get("name"),
+      description: formData.get("description"),
       price_cost: formData.get("price_cost"),
       price_with_Revenue: formData.get("price_with_Revenue"),
       quantity: formData.get("quantity"),

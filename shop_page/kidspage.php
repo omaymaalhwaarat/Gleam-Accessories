@@ -68,6 +68,7 @@ $result_query = mysqli_stmt_get_result($stmt);
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
         * {
@@ -105,6 +106,21 @@ $result_query = mysqli_stmt_get_result($stmt);
             border-radius: 15px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease-in-out;
+        }
+
+        .forlogo {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: #333 solid .1px;
+            text-align: center;
+        }
+
+        .forlogo>img {
+            height: 200px;
+        }
+
+        .fot {
+            text-align: center;
         }
 
         .card:hover {
@@ -262,7 +278,7 @@ $result_query = mysqli_stmt_get_result($stmt);
                     <img class="card-img-top" src="<?php echo $x['image']; ?>" alt="<?php echo $x['name']; ?>">
                     <div class="card-body">
                         <h4 class="card-title"><?php echo $x['name']; ?></h4>
-                        <h4 class="card-title"><?php echo $x['price_cost']; ?></h4>
+                        <h4 class="card-title"><?php echo $x['price_cost']; ?> JD</h4>
                         <p class="card-text"><?php echo $x['description']; ?></p>
                         <a href="../user/product.php?id=<?php echo $x['id']; ?>" class="btnn">Shop Now</a>
                         <a href="../user/reviews.php?id=<?php echo $x['id']; ?>" class="btnn"> Reviews</a>
@@ -271,6 +287,20 @@ $result_query = mysqli_stmt_get_result($stmt);
             <?php endwhile; ?>
         </div>
     </div>
+    <footer>
+        <div class="forlogo">
+            <img src="../asset/home_img/logo1.png" alt="">
+        </div>
+        <div class="fot">
+            <h3>GLEAM ACCESSORIES</h3>
+            <div>
+                <a href="#" style="margin-right: 40px;"><i class="fab fa-facebook"
+                        style="font-size: 30px;color: black;"></i></a>
+                <a href="#"><i class="fab fa-instagram" style="font-size: 30px;color: black;"></i></a>
+            </div>
+            <p>© 2025, GLEAM Inc. SHOP NOW WITH GLEAM</p>
+        </div>
+    </footer>
 
 </body>
 

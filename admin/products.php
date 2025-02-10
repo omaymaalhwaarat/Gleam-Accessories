@@ -106,6 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] === "GET" && strpos($_SERVER['REQUEST_URI'], '/ge
 if ($_SERVER['REQUEST_METHOD'] == 'PUT' && $action == 'update') {
     $id = $data['id'] ?? 0;
     $name = $data['name'] ?? "";
+    $disc = $data['description'] ?? "";
     $price_cost = $data['price_cost'] ?? 0;
     $price_with_Revenue = $data['price_with_Revenue'] ?? 0;
     $quantity = $data['quantity'] ?? 0;
@@ -119,8 +120,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'PUT' && $action == 'update') {
     }
 
     try {
-        $stmt = $mysqli->prepare('UPDATE products SET name=?, price_cost=?, price_with_Revenue=?, quantity=?, image=?, category_id=? WHERE id=?');
-        $stmt->bind_param('sddisii', $name, $price_cost, $price_with_Revenue, $quantity, $image, $category_id, $id); // Correct binding order and types
+        $stmt = $mysqli->prepare('UPDATE products SET name=?,description=?, price_cost=?, price_with_Revenue=?, quantity=?, image=?, category_id=? WHERE id=?');
+        $stmt->bind_param('ssddisii', $name, $disc, $price_cost, $price_with_Revenue, $quantity, $image, $category_id, $id); // Correct binding order and types
         $stmt->execute();
 
         if ($stmt->affected_rows > 0) {

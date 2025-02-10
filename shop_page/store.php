@@ -150,7 +150,7 @@ $result_discounts = $conn->query($query_discounts);
         .card-body p {
             margin: 10px 0;
             flex-grow: 1;
-            display: flex;
+
             align-items: center;
             justify-content: center;
             min-height: 60px;
@@ -353,7 +353,7 @@ $result_discounts = $conn->query($query_discounts);
 
     <footer>
         <div class="forlogo">
-            <img src="asset/home_img/logo1.png" alt="">
+        <img src="../asset/home_img/logo1.png" alt="">
         </div>
         <div class="fot">
             <h3>GLEAM ACCESSORIES</h3>

@@ -111,15 +111,20 @@ class Signup
             padding: 0;
             margin: 0;
             background-color: #faf7f5;
-            background-image: url("log.png");
-            background-size: auto;
+            background-image: url("asset/image.png");
+            background-size: cover;
+
             background-repeat: no-repeat;
+
+            background-position: center;
+
             color: #333;
+
         }
 
         .container {
             max-width: 400px;
-            margin: 50px auto;
+            margin-top: 50px;
             padding: 20px;
             background-color: #fff;
             border-radius: 8px;
@@ -171,36 +176,38 @@ class Signup
 
 <body>
     <div class="container">
-        <h2>Sign Up</h2>
-        <form method="post" onsubmit="return signvalid(event)">
-            <div>
+        <h2 class="my-3">Sign Up</h2>
+        <form method="post" onsubmit="return signvalid(event)"
+            class="d-flex justify-content-center align-items-center flex-column">
+            <div class="w-100  px-3">
                 <label>Full Name:</label><br>
-                <input type="text" name="name" id="name" placeholder="Full Name ..." required>
+                <input type="text" name="name" id="name" placeholder="Full Name ..." required class="w-100 ">
                 <p id="name_err" class="err"> </p>
             </div>
-            <div>
+            <div class="w-100 px-3">
                 <label>Email:</label><br>
-                <input type="email" name="email" id="email" placeholder="Email ..." required>
+                <input type="email" name="email" id="email" placeholder="Email ..." required class="w-100">
                 <p id="email_error" class="err"> </p>
             </div>
-            <div>
+            <div class="w-100 px-3">
                 <label>Password:</label><br>
-                <input type="password" name="password" id="password" placeholder="Password ...." required>
+                <input type="password" name="password" id="password" placeholder="Password ...." required class="w-100">
                 <p id="password_error" class="err"> </p>
             </div>
-            <div>
+            <div class="w-100 px-3">
                 <label>Confirm Password:</label><br>
-                <input type="password" name="conf_pass" id="conf_pass" placeholder="Confirm Password ...." required>
+                <input type="password" name="conf_pass" id="conf_pass" placeholder="Confirm Password ...." required
+                    class="w-100">
                 <p id="confirm_error" class="err"> </p>
             </div>
-            <div>
+            <div class="w-100 px-3">
                 <label>Phone number:</label><br>
-                <input type="text" name="phone" id="phone" placeholder="Phone number ..." required>
+                <input type="text" name="phone" id="phone" placeholder="Phone number ..." required class="w-100">
                 <p id="phone_error" class="err"> </p>
             </div>
-            <div>
+            <div class="w-100 px-3">
                 <label>Address:</label><br>
-                <input type="text" name="address" id="address" placeholder="Address ..." required>
+                <input type="text" name="address" id="address" placeholder="Address ..." required class="w-100">
                 <p id="address_error" class="err"> </p>
             </div>
             <div style="text-align: center;">

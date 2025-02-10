@@ -13,6 +13,7 @@ $result_discounts = $conn->query($query_discounts);
     <title>Discounted Products</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         *{
             font-family: "Cormorant Garamond", serif;
@@ -29,6 +30,20 @@ $result_discounts = $conn->query($query_discounts);
         flex-wrap: wrap;
         justify-content: space-evenly;
     }
+    .forlogo {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: #333 solid .1px;
+            text-align: center;
+        }
+
+        .forlogo>img {
+            height: 200px;
+        }
+
+        .fot {
+            text-align: center;
+        }
     .btnn{
     display: inline-block;
     background-color:white;
@@ -121,5 +136,19 @@ $result_discounts = $conn->query($query_discounts);
             <?php endwhile; ?>
         </div>
     </div>
+    <footer>
+        <div class="forlogo">
+        <img src="../asset/home_img/logo1.png" alt="">
+        </div>
+        <div class="fot">
+            <h3>GLEAM ACCESSORIES</h3>
+            <div>
+                <a href="#" style="margin-right: 40px;"><i class="fab fa-facebook"
+                        style="font-size: 30px;color: black;"></i></a>
+                <a href="#"><i class="fab fa-instagram" style="font-size: 30px;color: black;"></i></a>
+            </div>
+            <p>© 2025, GLEAM Inc. SHOP NOW WITH GLEAM</p>
+        </div>
+    </footer>
 </body>
 </html>

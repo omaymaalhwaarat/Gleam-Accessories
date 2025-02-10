@@ -90,7 +90,7 @@ if (isset($_POST['login'])) {
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <title>add users</title>
+    <title>Login</title>
     <style>
         * {
             font-family: "Cormorant Garamond", serif;
@@ -99,18 +99,22 @@ if (isset($_POST['login'])) {
         }
 
         body {
+            padding: 0;
+            margin: 0;
             background-color: #faf7f5;
+            background-image: url("asset/log.png");
+            background-size: auto;
             color: #333;
         }
 
         .container {
             max-width: 400px;
-            margin: 50px auto;
+            margin: 80px auto;
             padding: 20px;
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 250px;
+
         }
 
         h2 {
@@ -194,7 +198,11 @@ if (isset($_POST['login'])) {
             }
             if (!valid) {
                 event.preventDefault();
+            } else {
+                sessionStorage.setItem("islog", "log");
             }
         }
-</body >
-</html >
+    </script>
+</body>
+
+</html>

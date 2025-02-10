@@ -64,23 +64,8 @@
 
         .card {
             width: 300px;
-
-            height: 450px;
-
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-
             padding-bottom: 20px;
             text-align: center;
-            box-sizing: border-box;
-            border: 1px solid #ddd;
-
-            border-radius: 8px;
-
-            overflow: hidden;
-
         }
 
         .third {
@@ -89,25 +74,7 @@
         }
 
         .card>img {
-            width: 100%;
-
-            height: 60%;
-
-            object-fit: cover;
-
-            border-bottom: 1px solid #ddd;
-
-        }
-
-        .card-title,
-        .card-text {
-            margin: 0;
-            padding: 10px 15px;
-        }
-
-        .card .butuu {
-            margin-top: auto;
-
+            height: 300px;
         }
 
         .forth {
@@ -136,6 +103,22 @@
         .fot {
             text-align: center;
         }
+
+        #cart {
+            display: none;
+        }
+
+        #profile {
+            display: none;
+        }
+
+        #login {
+            display: block;
+        }
+
+        #logout {
+            display: none;
+        }
     </style>
 </head>
 
@@ -158,7 +141,10 @@
                         <a class="nav-link" href="feedback.html" style="color: black;">Feedback</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login.php" style="color: black;">Login</a>
+                        <a class="nav-link" href="login.php" style="color: black;" id="login">Login</a>
+                    </li>
+                    <li class="nav-item" id="logout">
+                        <a class="nav-link" href="login.php" style="color: black;" onclick="logout()">logout</a>
                     </li>
                 </ul>
             </div>
@@ -173,13 +159,12 @@
                 <li class="nav-item">
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="user/cart.php" style="color: black; opacity: .9;font-size: 30px;"><i
-                            class="fa-solid fa-cart-shopping"></i>
-                    </a>
+                    <a class="nav-link" id="cart" href="user/cart.php"
+                        style="color: black; opacity: .9;font-size: 30px;"><i class="fa-solid fa-cart-shopping"></i></a>
                 </li>
                 <li class="nav-item" id="user">
-                    <a class="nav-link" href="user/profile.php" style="color: black;opacity: .9;font-size: 30px"><i
-                            class="fa-solid fa-user"></i> </a>
+                    <a class="nav-link" id="profile" href="user/profile.php"
+                        style="color: black;opacity: .9;font-size: 30px"><i class="fa-solid fa-user"></i></a>
                 </li>
             </ul>
             <img src="asset/home_img/hero-01.jpg" style="width: 100%; height: 700px;margin-top: -60px;" class="d-block">
@@ -230,7 +215,7 @@
                 satisfaction. Join us in celebrating the craftsmanship and beauty of handmade jewelry that you can wear
                 with pride.</p>
         </div>
-
+        <a href="" class="butuu">Read more</a>
     </div>
     <!------------------------------------------------------------------->
     <!---------------------------------shoping ---------------------------------->
@@ -243,8 +228,9 @@
                         <div class="card">
                             <img class="card-img-top" src="asset/home_img/pre.kids.jpg" alt=""> <!---card src -->
                             <div class="card-body">
-                                <h4 class="card-title">Kids</h4>
-                                <p class="card-text" style="margin-bottom: 30px;">Shop now from the kid's section</p>
+                                <h4 class="card-title">Kids accessories</h4>
+                                <p class="card-text" style="margin-bottom: 30px;">Shop now from the kid's accessories
+                                </p>
                                 <a href="shop_page/kidspage.php" class="butuu">See All</a>
                             </div>
                         </div>
@@ -253,8 +239,9 @@
                         <div class="card">
                             <img class="card-img-top" src="asset/home_img/pre.men.jpg" alt=""> <!---card src -->
                             <div class="card-body">
-                                <h4 class="card-title">Men</h4>
-                                <p class="card-text" style="margin-bottom: 30px;">Shop now from the men's section </p>
+                                <h4 class="card-title">Men accessories</h4>
+                                <p class="card-text" style="margin-bottom: 30px;">Shop now from the men's accessories
+                                </p>
                                 <a href="shop_page/menpage.php" class="butuu">See All</a>
                             </div>
                         </div>
@@ -264,8 +251,9 @@
                             <img class="card-img-top" src="asset/home_img/categorie-02-300x300.jpg" alt="">
                             <!---card src -->
                             <div class="card-body">
-                                <h4 class="card-title">Women</h4>
-                                <p class="card-text" style="margin-bottom: 30px;">Shop now from the Women's section </p>
+                                <h4 class="card-title">Women accessories</h4>
+                                <p class="card-text" style="margin-bottom: 30px;">Shop now from the Women's accessories
+                                </p>
                                 <a href="shop_page/womenpage.php" class="butuu">See All</a>
                             </div>
                         </div>
@@ -299,6 +287,28 @@
         </div>
     </footer>
     <!------------------------------------------------------------------->
+    <script>
+
+        window.addEventListener('load', function () {
+            let islog = sessionStorage.getItem("islog") || "";
+            console.log(islog);
+            if (islog == "log") {
+                document.getElementById("profile").style.display = "block";
+                document.getElementById("cart").style.display = "block";
+                document.getElementById("login").style.display = "none";
+                document.getElementById("logout").style.display = "block";
+            } else {
+                document.getElementById("profile").style.display = "none";
+                document.getElementById("cart").style.display = "none";
+                document.getElementById("login").style.display = "block";
+                document.getElementById("logout").style.display = "none";
+            }
+        });
+        function logout() {
+            sessionStorage.clear();
+        }
+
+    </script>
 
 </body>
 
